@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 700px;
+            border: 1px solid blue;
+            margin: 40px auto;
+        }
+
+        li {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        label {
+            margin-left: 100px;
+            display: inline-block;
+            line-height: 30px;
+            height: 30px;
+            width: 100px;
+            text-align: right;
+            color: rgb(143, 138, 138);
+        }
+
+        .in-put {
+            margin-left: 20px;
+            height: 30px;
+            width: 200px;
+        }
+
+        .t-mes {
+            height: 30px;
+            line-height: 30px;
+            margin-left: 10px;
+            font-size: 15px;
+        }
+
+        .check-xieyi {
+            margin-left: 160px;
+        }
+
+        li p {
+            display: inline;
+            color: rgb(143, 138, 138);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li><label for="phone">手机号：</label><input type="text" id="phone" class="in-put"><span
+                    class="t-mes">fe</span></li>
+            <li><label for="qq">QQ：</label><input type="text" id="qq" class="in-put"><span class="t-mes"></span></li>
+            <li><label for="sname">昵称：</label><input type="text" id="sname" class="in-put"><span
+                    class="t-mes">五个以内的汉字</span>
+            </li>
+            <li><label for="message">短信验证码：</label><input type="text" id="message" class="in-put"><span
+                    class="t-mes"></span></li>
+            <li><label for="pwd">登录密码：</label><input type="text" id="pwd" class="in-put"><span
+                    class="t-mes">以字母开头，长度在6~18之间，只能包含字母、数字和下划线</span>
+            </li>
+            <li><span></span></li>
+            <li><label for="pwd1">确认密码：</label><input type="text" id="pwd1" class="in-put"><span class="t-mes"></span>
+            </li>
+            <li><input type="checkbox" class="check-xieyi">
+                <p>同意协议并注册<a href="#">用户协议</a></p>
+            </li>
+            <li></li>
+        </ul>
+    </div>
+
+    <script>
+        //获取元素
+        var phone = document.querySelector('#phone');
+        var qq = document.querySelector('#qq');
+        var sname = document.querySelector('#sname');
+        var message = document.querySelector('#message');
+        var pwd = document.querySelector('#pwd');
+        var pwd1 = document.querySelector('#pwd1');
+
+        //正则表达式
+        var reg_phone = /^(13[0-9]|14[5|7]|15[0|1|2|3|4|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
+        var reg_qq = /[1-9][0-9]{4,}/;
+        var reg_sname = /[\u4e00-\u9fa5]{1-5}/;
+        var reg_message = /^\d{6}$/;
+        var reg_pwd = /^[a-zA-Z]\w{5,17}$/;
+        //判断文本框内容输入是否正确
+        function isTrue(name,reg){
+            name.onblur=function(){
+                if(reg.test(this.value)){
+console.log('yes');
+}else{
+    console.log('no');
+}
+            }
+
+        }
+        //调用函数
+        isTrue(phone,reg_phone);
+        isTrue(qq,reg_qq);
+        isTrue(sname,reg_sname);
+        isTrue(message,reg_message);
+        isTrue(pwd,reg_pwd);
+        isTrue(pwd1,reg_pwd);
+        
+        
+    </script>
+
+</body>
+
+</html>

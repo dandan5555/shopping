@@ -1,0 +1,72 @@
+*{
+    padding:0;
+    margin:0;
+}
+li{
+    list-style: none;
+}
+.box{
+    margin: 100px auto;
+    width: 700px;
+    height: 400px;
+    border: 1px solid rgb(224, 187, 35);
+}
+nav{
+    position: relative;
+    height: 50px;
+    border-bottom: 1px solid gainsboro;
+}
+nav ul{
+    float: left;
+}
+nav ul .u-one{
+    border-bottom: 1px solid white;
+}
+nav ul li{
+    position: relative;
+    display: inline-block;
+    line-height: 50px;
+    text-align: center;
+    border-right: 1px solid gainsboro;
+    padding: 0 20px;
+}
+nav ul li section{
+    display: inline;
+    padding: 3px;
+}
+nav ul li span{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    color: white;
+    line-height: 15px;
+    font-size: 8px;
+    border-bottom-left-radius: 20px;
+}
+
+nav>span{
+    position: absolute;
+    top:50%;
+    right: 12px;
+    float: right;
+    margin-top: -12px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border: 1px solid gainsboro;
+}
+.content{
+    margin:25px auto;
+    height: 300px;
+    width: 90%;
+}
+.content section{
+    display: none;
+}
+.content .c-one{
+    display: block;
+}
